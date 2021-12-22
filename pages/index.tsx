@@ -12,7 +12,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="min-h-scren px-4 md:px-4 flex flex-1">
+      <main className="">
         <Hero />
       </main>
     </Layout>
