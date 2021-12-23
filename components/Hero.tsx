@@ -8,6 +8,7 @@ const Hero = () => {
           priority={true}
           src="/hero.jpg"
           layout='fill'
+          alt="hero"
         />
       </div>
       <div className="flex flex-col absolute my-auto mx-4 md:mx-20 py-30 min-h-full justify-center text-center">
@@ -17,7 +18,7 @@ const Hero = () => {
         <h2 className="text-white pt-5">Up do date bleiben:</h2>
         <p className="text-white">Jetzt für den Newsletter anmelden, um up to date zu bleiben. Sie erfahren zuerst, wenn qoyo.io zur Verfügung steht und können das Tool nutzen, um Ihre nachhaltige und individuelle Marketingstrategie zu generieren.</p>
         <div className="py-5">
-          <a className="bg-white rounded p-2" target="_blank" href="http://eepurl.com/hQHjoL">Jetzt für Newsletter anmelden</a>
+          <a className="bg-white rounded p-2" target="_blank" rel="noreferrer" href="http://eepurl.com/hQHjoL">Jetzt für Newsletter anmelden</a>
         </div>
       </div>
     </div>
