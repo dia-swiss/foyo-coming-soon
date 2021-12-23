@@ -8,6 +8,7 @@ const Home: NextPage = () => {
     <Layout>
       <Head>
         <title>Qoyo.io</title>
+        <meta name="title" content="in 15min zur digitalen Marketingstrategie mit qoyo.io" />
         <meta name="description" content="In 15min zur digitalen Marketingstrategie für KMU, Selbständige und Startups" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
