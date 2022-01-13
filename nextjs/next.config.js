@@ -5,11 +5,11 @@ module.exports = {
     return [
       {
         source: '/internal',
-        destination: 'http://46.101.209.133/'
+        destination: 'http://46.101.209.133'
       },
       {
-        source: '/internal(.*)',
-        destination: 'http://46.101.209.133/$1'
+        source: '/internal/:path*',
+        destination: 'http://46.101.209.133/:path*'
       }
     ]
   }

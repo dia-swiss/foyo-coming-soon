@@ -15,7 +15,7 @@ services:
     ports:
       - 1337:1337
     volumes:
-      - ./app:/srv/app
+      - ./tmp/app:/srv/app
     depends_on:
       - db
 
@@ -24,7 +24,7 @@ services:
     image: postgres
     restart: always
     volumes:
-      - ./db:/var/lib/postgresql/data
+      - ./tmp/db:/var/lib/postgresql/data
     environment:
       POSTGRES_USER: strapi
       POSTGRES_PASSWORD: strapi
