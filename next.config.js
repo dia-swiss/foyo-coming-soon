@@ -4,12 +4,12 @@ module.exports = {
   async rewrites() {
     return [
       {
-        source: '/internal/:path*',
-        destination: 'http://46.101.209.133/:path*'
+        source: '/internal',
+        destination: 'http://46.101.209.133/'
       },
       {
-        source: '/internal/:path*/',
-        destination: 'http://46.101.209.133/:path*/'
+        source: '/internal(.*)',
+        destination: 'http://46.101.209.133/$1'
       }
     ]
   }
