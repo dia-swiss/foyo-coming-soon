@@ -1,6 +1,6 @@
 FROM node:14.17-slim
 
-WORKDIR /usr/src/app
+WORKDIR /srv/app
 
 COPY package.json yarn.lock ./
 
