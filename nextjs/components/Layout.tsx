@@ -1,9 +1,15 @@
-import { NextPage } from "next";
+import React from "react";
+import Footer from "./Footer";
+import Navbar from "./Navbar";
 
-const Layout: NextPage = ({ children }) => {
+const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <div>
-      {children}
+      <Navbar />
+      <main className='px-10 max-w-7xl mx-auto' style={{ minHeight: 'calc(100vh - 140px)' }}>
+        {children}
+      </main>
+      <Footer />
     </div>
   );
 };

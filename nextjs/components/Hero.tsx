@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import heropic from "../public/hero.jpg";
 
 const Hero = () => (
   <div className='flex justify-center'>
@@ -6,7 +7,7 @@ const Hero = () => (
     <div className='fixed h-screen w-screen overflow-hidden -z-10'>
       <Image
         priority={true}
-        src="/hero.jpg"
+        src={heropic}
         layout='fill'
         alt="hero"
         quality={100}
