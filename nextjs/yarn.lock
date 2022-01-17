@@ -1145,6 +1145,23 @@ elliptic@^6.5.3:
     minimalistic-assert "^1.0.1"
     minimalistic-crypto-utils "^1.0.1"
 
+embla-carousel-autoplay@^6.1.0:
+  version "6.1.0"
+  resolved "https://registry.yarnpkg.com/embla-carousel-autoplay/-/embla-carousel-autoplay-6.1.0.tgz#77fb5bb21b5d15ad24c5ca8ae3d047f3c24b4c59"
+  integrity sha512-agUrEpJ8DInVk4E2zuINbeik+3YAyg5ym0JrwrJmBH2vEzdxam4ce07Dmsph5RW028K5sH+NCPtzTNvWJ4ectA==
+
+embla-carousel-react@^6.1.0:
+  version "6.1.0"
+  resolved "https://registry.yarnpkg.com/embla-carousel-react/-/embla-carousel-react-6.1.0.tgz#e8002e7513560c583b76462812efb4b5fe4ca9dc"
+  integrity sha512-ITGNq97UDzvEZV/FuFhlWmLQ36qdQkKFcXIJxp97wQt2K5Bs/PK1xS/AoltO789ly1g3+eHE/pDsolcF1QOmTA==
+  dependencies:
+    embla-carousel "6.1.0"
+
+embla-carousel@6.1.0:
+  version "6.1.0"
+  resolved "https://registry.yarnpkg.com/embla-carousel/-/embla-carousel-6.1.0.tgz#5552b011a76a050206be0f9f124eb76dbdfeaeb6"
+  integrity sha512-Q1AxMS3wYR8g+lSdwwSspRLTCwkg2iN9Ew4lSraboj2XXh97/esY56JOe/u2R4l+tFhJ0/fOUqCYq4dz6NJS9g==
+
 emoji-regex@^8.0.0:
   version "8.0.0"
   resolved "https://registry.yarnpkg.com/emoji-regex/-/emoji-regex-8.0.0.tgz#e818fd69ce5ccfcb404594f842963bf53164cc37"
@@ -2871,6 +2888,11 @@ react-gtm-module@^2.0.11:
   version "2.0.11"
   resolved "https://registry.yarnpkg.com/react-gtm-module/-/react-gtm-module-2.0.11.tgz#14484dac8257acd93614e347c32da9c5ac524206"
   integrity sha512-8gyj4TTxeP7eEyc2QKawEuQoAZdjKvMY4pgWfycGmqGByhs17fR+zEBs0JUDq4US/l+vbTl+6zvUIx27iDo/Vw==
+
+react-icons@^4.3.1:
+  version "4.3.1"
+  resolved "https://registry.yarnpkg.com/react-icons/-/react-icons-4.3.1.tgz#2fa92aebbbc71f43d2db2ed1aed07361124e91ca"
+  integrity sha512-cB10MXLTs3gVuXimblAdI71jrJx8njrJZmNMEMC+sQu5B/BIOmlsAjskdqpn81y8UBVEGuHODd7/ci5DvoSzTQ==
 
 react-is@17.0.2:
   version "17.0.2"
