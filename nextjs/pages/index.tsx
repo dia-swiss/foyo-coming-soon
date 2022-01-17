@@ -8,7 +8,7 @@ import Carousel from '../components/Carousel';
 const Home: NextPage = () => {
 
 
-  const teasers = [{
+  const renderTeasers = () => [{
     src: '/teaser_1.png',
     title: 'Unsere KI kennt sich aus',
     text: 'Im Hintergrund drehen sich viele Zahnräder für die bestmögliche Variante.'
@@ -20,7 +20,24 @@ const Home: NextPage = () => {
     src: '/teaser_3.png',
     title: 'Es ist keine Wissenschaft',
     text: 'Sondern eine nachhaltige und langfristige Marketingstrategie für dein Unternehmen.'
-  }]
+  }].map(({ src, title, text }, idx) => {
+    return <div key={idx} className='flex flex-col gap-4 items-center'>
+      <Image
+        priority={true}
+        src={src}
+        alt={''}
+        width={190}
+        height={173}
+        layout='fixed'
+      />
+      <div className='text-center text-xl font-bold'>
+        {title}
+      </div>
+      <div className='text-center text-base'>
+        {text}
+      </div>
+    </div>
+  })
 
   return (
     <>
@@ -55,49 +72,17 @@ const Home: NextPage = () => {
 
       <div className='block md:hidden w-72 mx-auto pb-12'>
         <Carousel>
-          {teasers.map(({ src, title, text }, idx) => {
-            return <div className='flex flex-col gap-4 items-center'>
-              <Image
-                priority={true}
-                src={src}
-                width={190}
-                height={173}
-                layout='fixed'
-              />
-              <div className='text-center text-xl font-bold'>
-                {title}
-              </div>
-              <div className='text-center text-base'>
-                {text}
-              </div>
-            </div>
-          })}
+          {renderTeasers()}
         </Carousel>
       </div>
 
       <div className='hidden md:flex gap-12 pb-12'>
-        {teasers.map(({ src, title, text }, idx) => {
-          return <div className='flex flex-col gap-4 items-center'>
-            <Image
-              priority={true}
-              src={src}
-              width={190}
-              height={173}
-              layout='fixed'
-            />
-            <div className='text-center text-xl font-bold'>
-              {title}
-            </div>
-            <div className='text-center text-base'>
-              {text}
-            </div>
-          </div>
-        })}
+        {renderTeasers()}
       </div>
 
       <div className='hidden sm:flex flex-col items-center'>
         <div className='text-4xl text-center pb-8 font-bold'>
-          Möchtest Du als Erster wissen,<br/> wohin das Abenteuer<br/> mit QOYO geht?
+          Möchtest Du als Erster wissen,<br /> wohin das Abenteuer<br /> mit QOYO geht?
         </div>
         <div className='hidden sm:flex justify-center items-center flex-col gap-2 mb-6'>
           <NewsletterLink />

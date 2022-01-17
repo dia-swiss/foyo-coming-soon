@@ -21,7 +21,7 @@ const Carousel = ({ children }: { children: React.ReactChild[] }) => {
         return () => {
             embla.off('settle', onSettle);
         }
-    }, [embla])
+    }, [embla,onSettle])
 
     return (
         <>
