@@ -10,18 +10,18 @@ const Carousel = ({ children }: { children: React.ReactChild[] }) => {
 
     const [selectedIndex, setSelectedIndex] = useState(0);
 
-    const onSettle = useCallback(() => {
+    const onSelect = useCallback(() => {
         if (!embla) return;
         setSelectedIndex(embla.selectedScrollSnap());
-    }, [embla]);
+    }, [embla, setSelectedIndex]);
 
     useEffect(() => {
         if (!embla) return;
-        embla.on('settle', onSettle);
+        embla.on('select', onSelect);
         return () => {
-            embla.off('settle', onSettle);
+            embla.off('select', onSelect);
         }
-    }, [embla,onSettle])
+    }, [embla, onSelect])
 
     return (
         <>
