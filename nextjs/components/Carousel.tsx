@@ -1,12 +1,15 @@
 import Autoplay from "embla-carousel-autoplay";
 import useEmblaCarousel from "embla-carousel-react";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 const Carousel = ({ children }: { children: React.ReactChild[] }) => {
-
-
-    const emblaPlugins = [Autoplay({ delay: 2500 })]
-    const [emblaRef, embla] = useEmblaCarousel({ loop: true }, emblaPlugins);
+  const autoplay = useRef(
+    Autoplay(
+      { delay: 3000, stopOnInteraction: true },
+      (emblaRoot) => emblaRoot.parentElement
+    )
+  );
+    const [emblaRef, embla] = useEmblaCarousel({ loop: true }, [autoplay.current]);
 
     const [selectedIndex, setSelectedIndex] = useState(0);
 
@@ -16,11 +19,8 @@ const Carousel = ({ children }: { children: React.ReactChild[] }) => {
     }, [embla]);
 
     useEffect(() => {
-        if (!embla) return;
-        embla.on('settle', onSettle);
-        return () => {
-            embla.off('settle', onSettle);
-        }
+      if(!embla) return;
+      embla.on("select", onSettle);
     }, [embla,onSettle])
 
     return (
