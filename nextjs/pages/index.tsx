@@ -3,10 +3,42 @@ import Layout from '../components/Layout';
 import Impressum from './impressum';
 import Image from 'next/image';
 import NewsletterLink, { AsteriskText } from '../components/NewsletterLink';
-
-
+import Carousel from '../components/Carousel';
 
 const Home: NextPage = () => {
+
+
+  const renderTeasers = () => [{
+    src: '/teaser_1.png',
+    title: 'Unsere KI kennt sich aus',
+    text: 'Im Hintergrund drehen sich viele Zahnräder für die bestmögliche Variante.'
+  }, {
+    src: '/teaser_2.png',
+    title: 'Entfalte Deine Power',
+    text: 'Aus unzähligen Variationen entsteht eine massgeschneiderte Lösung.'
+  }, {
+    src: '/teaser_3.png',
+    title: 'Es ist keine Wissenschaft',
+    text: 'Sondern eine nachhaltige und langfristige Marketingstrategie für dein Unternehmen.'
+  }].map(({ src, title, text }, idx) => {
+    return <div key={idx} className='flex flex-col gap-4 items-center'>
+      <Image
+        priority={true}
+        src={src}
+        alt={''}
+        width={190}
+        height={173}
+        layout='fixed'
+      />
+      <div className='text-center text-xl font-bold'>
+        {title}
+      </div>
+      <div className='text-center text-base'>
+        {text}
+      </div>
+    </div>
+  })
+
   return (
     <>
       <div className='sm:flex sm:justify-between'>
@@ -18,6 +50,7 @@ const Home: NextPage = () => {
             In 15 Minuten zur digitalen Marketing&shy;strategie für KMU, Selbständige und Startups.
           </div>
         </div>
+
         <div className='hidden md:flex items-center'>
           <Image
             priority={true}
@@ -29,7 +62,7 @@ const Home: NextPage = () => {
           />
         </div>
       </div>
-      <div className='flex flex-col gap-2 justify-center items-center sm:hidden'>
+      <div className='flex flex-col gap-2 justify-center pt-8 items-center sm:hidden'>
         <NewsletterLink />
         <AsteriskText />
       </div>
@@ -37,59 +70,19 @@ const Home: NextPage = () => {
         Wie funktioniert QOYO?
       </div>
 
-      <div className='flex gap-12 justify-center pb-12 '>
-        <div className='flex flex-col gap-4 w-72 items-center'>
-          <Image
-            priority={true}
-            src="/teaser_1.png"
-            alt="Marketing robot"
-            width={190}
-            height={173}
-            layout='fixed'
-          />
-          <div className='text-center text-xl font-bold'>
-            Unsere KI kennt sich aus
-          </div>
-          <div className='text-center text-base'>
-            Im Hintergrund drehen sich viele Zahnräder für die bestmögliche Variante
-          </div>
-        </div>
-        <div className='hidden md:flex flex-col gap-4 w-72 items-center'>
-          <Image
-            priority={true}
-            src="/teaser_2.png"
-            alt="Marketing robot"
-            width={190}
-            height={173}
-            layout='fixed'
-          />
-          <div className='text-center text-xl font-bold'>
-            Entfalte Deine Power
-          </div>
-          <div className='text-center text-base'>
-            Aus unzähligen Variationen entsteht eine massgeschneiderte Lösung.
-          </div>
-        </div>
-        <div className='hidden lg:flex flex-col gap-4 w-72 items-center'>
-          <Image
-            priority={true}
-            src="/teaser_3.png"
-            alt="Marketing robot"
-            width={190}
-            height={173}
-            layout='fixed'
-          />
-          <div className='text-center text-xl font-bold'>
-            Es ist keine Wissenschaft
-          </div>
-          <div className='text-center text-base'>
-            Sondern eine nachhaltige und langfristige Marketingstrategie für dein Unternehmen.
-          </div>
-        </div>
+      <div className='block md:hidden w-72 mx-auto pb-12'>
+        <Carousel>
+          {renderTeasers()}
+        </Carousel>
       </div>
-      <div className='hidden sm:block'>
-        <div className='text-4xl text-center pb-12 font-bold'>
-          Möchtest Du als Erster wissen, wohin das Abenteuer mit QOYO geht?
+
+      <div className='hidden md:flex gap-12 pb-12'>
+        {renderTeasers()}
+      </div>
+
+      <div className='hidden sm:flex flex-col items-center'>
+        <div className='text-4xl text-center pb-8 font-bold'>
+          Möchtest Du als Erster wissen,<br /> wohin das Abenteuer<br /> mit QOYO geht?
         </div>
         <div className='hidden sm:flex justify-center items-center flex-col gap-2 mb-6'>
           <NewsletterLink />
@@ -101,3 +94,6 @@ const Home: NextPage = () => {
 }
 
 export default Home
+
+
+

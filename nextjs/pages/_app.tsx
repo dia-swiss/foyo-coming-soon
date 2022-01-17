@@ -14,11 +14,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     <Head>
       <title>QOYO</title>
       <meta name="title" content="in 15min zur digitalen Marketingstrategie mit qoyo.io" />
-      <meta name="description" content="In 15min zur digitalen Marketingstrategie für KMU, Selbständige und Startups" />
-      <link rel="icon" href="/favicon.ico" />
-      <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin='anonymous' />
-      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+      <meta name="description" content="In 15min zur digitalen Marketingstrategie für KMU, Selbständige und Startups" />      
     </Head>
     <Component {...pageProps} />
   </Layout>
