@@ -11,6 +11,9 @@ const Impressum: NextPage = () => {
         <div>E-Mail:</div>
         <div>dominik.gebhardt@dia.swiss</div>
         <br />
+        <div className='font-semibold text-xl py-2'>Inhaltlich Verantwortlicher</div>
+        <div>Andy Müller</div>
+        <br />
         <div className='font-semibold text-xl py-2'>Vertretungsberechtigte Person(en)</div>
         <div>Dominik Gebhardt, Geschäftsführer</div>
         <br />
@@ -24,9 +27,6 @@ const Impressum: NextPage = () => {
         <div>Mehrwertsteuer-Nummer:</div>
         <div className='font-bold'>CHE-182.463.677 MWST</div>
         <br />
-        <div>Inhaltlich Verantwortlicher:</div>
-        <div className='font-bold'>Andy Müller</div>
-        <br />
         <div className='font-semibold text-xl py-2'>Haftungsausschluss</div>
         <p>Der Autor übernimmt keinerlei Gewähr hinsichtlich der inhaltlichen Richtigkeit, Genauigkeit, Aktualität, Zuverlässigkeit und Vollständigkeit der Informationen.</p>
         <p>Haftungsansprüche gegen den Autor wegen Schäden materieller oder immaterieller Art, welche aus dem Zugriff oder der Nutzung bzw. Nichtnutzung der veröffentlichten Informationen, durch Missbrauch der Verbindung oder durch technische Störungen entstanden sind, werden ausgeschlossen.</p>
@@ -39,7 +39,7 @@ const Impressum: NextPage = () => {
         <p>Die Urheber- und alle anderen Rechte an Inhalten, Bildern, Fotos oder anderen Dateien auf dieser Website, gehören ausschliesslich der Firma Data Intelligence Agency oder den speziell genannten Rechteinhabern. Für die Reproduktion jeglicher Elemente ist die schriftliche Zustimmung des Urheberrechtsträgers im Voraus einzuholen.</p>
         <br />
         <br />
-        <div className='pb-10'>Quelle: <a href="https://www.swissanwalt.ch" target="_blank" rel="noopener">SwissAnwalt</a></div>
+        <div className='pb-10'>Quelle: <a href="https://www.swissanwalt.ch" target="_blank" rel="noopener noreferrer">SwissAnwalt</a></div>
     </div>
 }
 
