@@ -1,27 +1,32 @@
 import Autoplay from "embla-carousel-autoplay";
 import useEmblaCarousel from "embla-carousel-react";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 const Carousel = ({ children }: { children: React.ReactChild[] }) => {
 
 
-    const emblaPlugins = [Autoplay({ delay: 2500 })]
-    const [emblaRef, embla] = useEmblaCarousel({ loop: true }, emblaPlugins);
+    const autoplay = useRef(
+        Autoplay(
+            { delay: 3000, stopOnInteraction: true },
+            (emblaRoot) => emblaRoot.parentElement
+        )
+    );
+    const [emblaRef, embla] = useEmblaCarousel({ loop: true }, [autoplay.current]);
 
     const [selectedIndex, setSelectedIndex] = useState(0);
 
-    const onSettle = useCallback(() => {
+    const onSelect = useCallback(() => {
         if (!embla) return;
         setSelectedIndex(embla.selectedScrollSnap());
-    }, [embla]);
+    }, [embla, setSelectedIndex]);
 
     useEffect(() => {
         if (!embla) return;
-        embla.on('settle', onSettle);
+        embla.on('select', onSelect);
         return () => {
-            embla.off('settle', onSettle);
+            embla.off('select', onSelect);
         }
-    }, [embla,onSettle])
+    }, [embla, onSelect])
 
     return (
         <>
