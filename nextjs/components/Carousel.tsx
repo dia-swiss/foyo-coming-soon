@@ -3,12 +3,13 @@ import useEmblaCarousel from "embla-carousel-react";
 import { useCallback, useEffect, useRef, useState } from "react";
 
 const Carousel = ({ children }: { children: React.ReactChild[] }) => {
-  const autoplay = useRef(
-    Autoplay(
-      { delay: 3000, stopOnInteraction: true },
-      (emblaRoot) => emblaRoot.parentElement
-    )
-  );
+
+    const autoplay = useRef(
+        Autoplay(
+            { delay: 3000, stopOnInteraction: true },
+            (emblaRoot) => emblaRoot.parentElement
+        )
+    );
     const [emblaRef, embla] = useEmblaCarousel({ loop: true }, [autoplay.current]);
 
     const [selectedIndex, setSelectedIndex] = useState(0);
